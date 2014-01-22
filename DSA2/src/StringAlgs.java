@@ -99,6 +99,8 @@ public class StringAlgs {
 		 *  
 		 */
 		 // Comment Longer!
+		
+		//SUck iT
 		String longest = "";
 		String current = "";
 		boolean isPalindrome = false;
