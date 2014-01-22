@@ -134,7 +134,39 @@ public class StringAlgs {
 
 	private static String longestPalindromeSubstring(String line) {
 		// TODO Auto-generated method stub
-		return null;
+		String longest = "";
+		String current = "";
+		boolean isPalindrome = false;
+		for(int k = 0; k < line.length();k++){
+		for (int i = k; i < line.length(); i++) {
+			if (line.charAt(k) == line.charAt(i)) {
+				int leftpt = k;
+				int rightpt = i;
+			    isPalindrome = true;
+				while (leftpt < line.length() && rightpt >= 0) {
+					if (line.charAt(leftpt) != line.charAt(rightpt)) {
+						isPalindrome = false;
+						break;
+					}
+					leftpt++;
+					rightpt--;
+				}
+				if (isPalindrome) {
+					current = line.substring(0, i + 1);
+
+					System.out.println("i = " + i
+							+ "  : Current String Printing  :  "
+							+ line.substring(0, i + 1));
+					if (current.length() > longest.length()) {
+						longest = current;
+					}
+				}
+			}
+		}
+		}
+
+		return longest;
+		
 	}
 
 	private static String longestCommonSubstring(String str1, String str2) {
