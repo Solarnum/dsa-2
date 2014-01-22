@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * COSC3100 Spring 2011 Homework 1
  * 
- * @author names of the team members add other comments here.
+ * @author Charlie Beckwith
  * 
  */
 
