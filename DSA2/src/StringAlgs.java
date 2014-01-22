@@ -92,13 +92,12 @@ public class StringAlgs {
 	 */
 	private static String longestPalindromePrefix(String line) {
 		/*
-		 * Inputs: A string[0-string.length()]
-		 * Output: The longest palindrome contained in the string given as an input
+		 * Inputs: A string[0-string.length()] Output: The longest palindrome
+		 * contained in the string given as an input
 		 * 
 		 * PSEUDOCODE:
-		 *  
 		 */
-		 
+
 		String longest = "";
 		String current = "";
 		boolean isPalindrome = false;
@@ -107,7 +106,7 @@ public class StringAlgs {
 			if (line.charAt(0) == line.charAt(i)) {
 				int leftpt = 0;
 				int rightpt = i;
-			    isPalindrome = true;
+				isPalindrome = true;
 				while (leftpt < line.length() && rightpt >= 0) {
 					if (line.charAt(leftpt) != line.charAt(rightpt)) {
 						isPalindrome = false;
@@ -137,40 +136,45 @@ public class StringAlgs {
 		String longest = "";
 		String current = "";
 		boolean isPalindrome = false;
-		for(int k = 0; k < line.length();k++){
-		for (int i = k; i < line.length(); i++) {
-			if (line.charAt(k) == line.charAt(i)) {
-				int leftpt = k;
-				int rightpt = i;
-			    isPalindrome = true;
-				while (leftpt < line.length() && rightpt >= 0) {
-					if (line.charAt(leftpt) != line.charAt(rightpt)) {
-						isPalindrome = false;
-						break;
+		for (int k = 0; k < line.length(); k++) {
+			for (int i = k; i < line.length(); i++) {
+				if (line.charAt(k) == line.charAt(i)) {
+					int leftpt = k;
+					int rightpt = i;
+					isPalindrome = true;
+					while (leftpt < line.length() && rightpt > leftpt) {
+						if (line.charAt(leftpt) != line.charAt(rightpt)) {
+							isPalindrome = false;
+							break;
+						}
+						leftpt++;
+						rightpt--;
 					}
-					leftpt++;
-					rightpt--;
-				}
-				if (isPalindrome) {
-					current = line.substring(0, i + 1);
+					if (isPalindrome) {
+						current = line.substring(k, i + 1);
 
-					System.out.println("i = " + i
-							+ "  : Current String Printing  :  "
-							+ line.substring(0, i + 1));
-					if (current.length() > longest.length()) {
-						longest = current;
+						System.out.println("i = " + i
+								+ "  : Current String Printing  :  "
+								+ line.substring(k, i + 1));
+						if (current.length() > longest.length()) {
+							longest = current;
+						}
 					}
 				}
 			}
 		}
-		}
 
 		return longest;
-		
+
 	}
 
 	private static String longestCommonSubstring(String str1, String str2) {
-		// TODO Auto-generated method stub
+		String longest = "";
+		String current = "";
+		
+		
+		
+		
 		return null;
 	}
 
