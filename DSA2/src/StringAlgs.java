@@ -98,7 +98,7 @@ public class StringAlgs {
 		 * PSEUDOCODE:
 		 *  
 		 */
-		 //LOL okay now its working? 
+		 //LOL okay now its working? Yes it is.
 		String longest = "";
 		String current = "";
 		boolean isPalindrome = false;
