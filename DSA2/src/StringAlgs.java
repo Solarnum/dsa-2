@@ -166,104 +166,32 @@ public class StringAlgs {
 	}
 
 	private static String longestCommonSubstring(String str1, String str2) {
-		LinkedList<Integer> subStarts = new LinkedList<Integer>();
-		boolean building = false, allFailed = true;
-		String smallRef, largeRef;
-		String substring = "";
-		int index = 0;
-
-		// Determine which input string is larger
-		if (str1.length() < str2.length()) {
-			smallRef = str1;
-			largeRef = str2;
-		} else {
-			smallRef = str2;
-			largeRef = str1;
-		}
-
-		for (int i = index; i < largeRef.length(); i++) {
-			// Build a list of the indices in the small string where
-			// the character is the current starting character
-			if (!building) {
-				for (int j = 0; j < smallRef.length(); j++) {
-					if (largeRef.charAt(i) == smallRef.charAt(j)) {
-						subStarts.add(j);
-					}
-				}
-
-				if (!subStarts.isEmpty()) {
-					building = true;
-				}
-			} else {
-				LinkedList<Integer> didntFail = new LinkedList<Integer>();
-				int[] failed = new int[subStarts.size()];
-				int failedIndex = 0;
-				int dist = i - index;
-
-				// Iterate through the small string's matching starting indices
-				for (Integer subStart : subStarts) {
-					// Ensure the next index is contained in the small string
-					// and
-					// the character at that next index is the same as the
-					// current character
-					// selected in the large string
-					if (subStart + dist < smallRef.length()
-							&& largeRef.charAt(i) == smallRef.charAt(subStart
-									+ dist)) {
-						failed[failedIndex] = 0; // signifies this starting
-													// index was successful;
-
-						// At least one of the small string's starting indices
-						// was successful
-						allFailed = false;
-					} else {
-						failed[failedIndex] = 1;
-					}
-
-					failedIndex++;
-				}
-
-				if (allFailed || (i + 1) >= largeRef.length()) {
-					String temp;
-
-					if (subStarts.getFirst() != 0) {
-						if (allFailed)
-							temp = smallRef.substring(subStarts.getFirst() - 1,
-									subStarts.getFirst() + dist);
-						else
-							temp = smallRef.substring(subStarts.getFirst() - 1,
-									subStarts.getFirst() + dist + 1);
-					} else
-						temp = smallRef.substring(subStarts.getFirst(),
-								subStarts.getFirst() + dist);
-
-					// Clear the list of substring starting locations
-					subStarts.clear();
-
-					// Determine if the newly found substring is longer than
-					// the previously found substring
-					if (temp.length() > substring.length()) {
-						substring = temp;
-					}
-
-					index++;
-					i = index - 1;
-					building = false;
-				} else if (i + 1 < largeRef.length()) {
-					for (Integer noFail : failed) {
-						if (noFail == 0) {
-							didntFail.add(subStarts.get(noFail));
+		String longest = "";
+		String current = "";
+		
+		for(int t = 0; t < str1.length();t++){
+			for(int k = 0; k < str2.length();k++){
+				if(str1.charAt(t) == str2.charAt(k)){
+					int oneIndex = t, twoIndex=k;
+					while(oneIndex < str1.length() && twoIndex < str2.length()){
+						if(str1.length() < 15){
 						}
+						if(str1.charAt(oneIndex) != str2.charAt(twoIndex)){
+							break;
+						}
+						oneIndex++;
+						twoIndex++;
 					}
-
-					subStarts = didntFail;
-
-					allFailed = true;
+					current = str2.substring(k,twoIndex);
+					if(current.length() > longest.length()){
+						longest = current;
+					}
+					
 				}
 			}
 		}
+		return longest;
 
-		return substring;
 
 	}
 
