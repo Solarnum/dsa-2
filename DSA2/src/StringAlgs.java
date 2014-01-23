@@ -118,10 +118,6 @@ public class StringAlgs {
 				}
 				if (isPalindrome) {
 					current = line.substring(0, i + 1);
-
-					System.out.println("i = " + i
-							+ "  : Current String Printing  :  "
-							+ line.substring(0, i + 1));
 					if (current.length() > longest.length()) {
 						longest = current;
 					}
