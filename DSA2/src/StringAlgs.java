@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
- * COSC3100 Spring 2011 Homework 1
+ * COSC3100 Spring 2014 Homework 1
  * 
  * @author Charlie Beckwith and Mark Schlotke
  * 
