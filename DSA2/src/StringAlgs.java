@@ -162,6 +162,31 @@ public class StringAlgs {
 	}
 
 	private static String longestCommonSubstring(String str1, String str2) {
+		
+		/*
+		
+		Input: A string string1 and a string string2
+		Output: A string
+		
+		string CURRENT
+		string LONGEST
+		FOR t=0 to length of string1 do
+			for k=0 to length of string2 do
+				IF string1[t] equals string2[k] THEN
+					int oneIndex = t
+					int twoIndex = k
+					WHILE oneIndex < length of string1 and twoIndex < length of string2
+						IF string1[oneIndex] is not equal to string2[twoIndex]
+							BREAK
+						oneIndex+1
+						twoIndex+1
+					CURRENT = substring of string2 from k to twoIndex
+					IF length of CURRENT > length of LONGEST
+						LONGEST = CURRENT
+						
+		RETURN LONGEST
+						
+		 */
 		String longest = "";
 		String current = "";
 		
@@ -170,8 +195,6 @@ public class StringAlgs {
 				if(str1.charAt(t) == str2.charAt(k)){
 					int oneIndex = t, twoIndex=k;
 					while(oneIndex < str1.length() && twoIndex < str2.length()){
-						if(str1.length() < 15){
-						}
 						if(str1.charAt(oneIndex) != str2.charAt(twoIndex)){
 							break;
 						}
