@@ -178,11 +178,19 @@ public class StringAlgs {
 					WHILE oneIndex < length of string1 and twoIndex < length of string2
 						IF string1[oneIndex] is not equal to string2[twoIndex]
 							BREAK
-						oneIndex+1
-						twoIndex+1
+						END IF
+						INCREMENT oneIndex
+						INCREMENT twoIndex
+					END WHILE
+						
 					CURRENT = substring of string2 from k to twoIndex
 					IF length of CURRENT > length of LONGEST
 						LONGEST = CURRENT
+					END IF
+				END IF
+			END FOR
+		END FOR
+					
 						
 		RETURN LONGEST
 						
