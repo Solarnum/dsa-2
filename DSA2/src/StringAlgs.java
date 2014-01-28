@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * COSC3100 Spring 2011 Homework 1
  * 
- * @author Charlie Beckwith
+ * @author Charlie Beckwith and Mark Schlotke
  * 
  */
 
