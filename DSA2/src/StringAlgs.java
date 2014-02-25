@@ -6,7 +6,10 @@ import java.util.Scanner;
 /**
  * COSC3100 Spring 2014 Homework 1
  * 
- * @author Charlie Beckwith and Mark Schlotke
+ * Algorithms and Data Structures 2
+ * Marquette University
+ * 
+ * @author Charlie Beckwith and Mark Schlottke
  * 
  */
 
